@@ -34,4 +34,21 @@ class HttpService {
     }
   }
 
+    static Future<void> getRoomData() async {
+    try {
+      debugPrint("calling api");
+      final http.Response response = await http.post(
+        Uri.parse('http://104.248.94.175/api/room'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Authorization': 'Bearer $_token',
+        },
+      );
+      final body =  jsonDecode(response.body) as Map<String, dynamic>;
+      debugPrint(body.toString());
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
 }
