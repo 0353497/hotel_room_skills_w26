@@ -17,7 +17,7 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  Color _themeColor = Colors.blue;
+  Color _themeColor = const Color.fromARGB(255, 8, 87, 152);
 
   @override
   void initState() {
@@ -34,6 +34,7 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: _themeColor),
+        primaryColor: _themeColor
       ),
       home: Homepage(),
     );

@@ -33,13 +33,13 @@ class Room {
       case 'green':
         return Colors.green;
       case 'red':
-        return Colors.red;
+        return const Color.fromARGB(255, 255, 17, 0);
       case 'blue':
-        return Colors.blue;
+        return Colors.blueAccent;
       case 'purple':
       return Colors.purple;
       case 'pink':
-      return Colors.pink;
+      return Color(0xffF362DF);
       case 'gold':
       return Colors.amberAccent;
       case 'yellow':
