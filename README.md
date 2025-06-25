@@ -7,3 +7,4 @@ Er is een `.env.template` gemaakt om het makkelijk te maken.
 ### Stappen:
 1. Voeg je token (van de opdracht pdf) toe in `.env.template`.
 2. Hernoem `.env.template` naar `.env`.
+3. dat is het zodra je dan het .env bestand hebt opgeslagen hoort het te werken!
