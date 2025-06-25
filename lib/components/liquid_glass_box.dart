@@ -10,6 +10,8 @@ class LiquidGlassBox extends StatelessWidget {
     required this.child,
     required this.alignment,
     this.padding = const EdgeInsets.all(16),
+    required this.onTap,
+    this.isActive = false
   });
 
   final double width;
@@ -17,6 +19,8 @@ class LiquidGlassBox extends StatelessWidget {
   final Widget child;
   final Alignment alignment;
   final EdgeInsets padding;
+  final VoidCallback onTap;
+  final bool isActive;
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +31,17 @@ class LiquidGlassBox extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: Container(
               width: width,
               height: height,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
+                color: isActive ? Colors.white : null
               ),
               child: Stack(
                 children: [
+                  if (!isActive)
                   BackdropFilter(
                     filter: ImageFilter.blur(
                       sigmaX: 10,
